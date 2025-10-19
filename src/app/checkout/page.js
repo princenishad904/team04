@@ -5,7 +5,6 @@ import { load } from "@cashfreepayments/cashfree-js";
 import { useSearchParams } from "next/navigation";
 import { toast } from "react-toastify";
 
-// Move the main content to a separate component that uses useSearchParams
 function CheckoutContent() {
   const [loading, setLoading] = useState(false);
   const [whatsappNumber, setWhatsappNumber] = useState("");
@@ -56,7 +55,7 @@ function CheckoutContent() {
       // 2️⃣ Initialize Cashfree
       const cashfree = await load({ mode:"production" }); // 'production' in live
 
-      const returnUrl = process.env.NODE_ENV !== "dev" ? "https://team04.site"  :"http://localhost:3000"
+      const returnUrl = process.env.NODE_ENV !== "dev" ? "https://apnasquad.site"  :"http://localhost:3000"
       // 3️⃣ Open checkout popup
       cashfree.checkout({
         paymentSessionId: sessionId,
