@@ -10,14 +10,27 @@ import { useSearchParams } from 'next/navigation';
 const App = () => {
     const query = useSearchParams();
     const code = query.get("code")
+    const date = new Date();
+
+    
   const tournamentDetails = useMemo(() => ([
-    { icon: Calendar, title: 'Date', value: '13 - Oct - 2025', color: 'text-sky-400' },
-    { icon: Clock, title: 'Start Time', value: '9:30 PM', color: 'text-amber-400' },
+    { icon: Calendar, title: 'Date', value: date.toLocaleDateString(), color: 'text-sky-400' },
+    { 
+      icon: Clock,
+       title: 'Start Time', 
+      value: code === "YT434GR930" ? "9:30 PM" :"10:30 PM", 
+      color: 'text-amber-400' 
+    },
     { icon: MapPin, title: 'Map', value: 'Erangle', color: 'text-blue-400' },
     { icon: ClipboardClock, title: 'Map', value: '1 match hoga point base', color: 'text-green-400' },
     { icon: Users, title: 'Slots', value: '16 Squads Only', color: 'text-purple-400' },
     { icon: DollarSign, title: 'Entry Fee', value: '₹60 per Squad', color: 'text-lime-400' },
-    { icon: Zap, title: 'ID/Pass Mil Jayega', value: '9:00 PM Par', color: 'text-red-400' },
+    { 
+         icon: Zap,
+         title: 'ID/Pass Mil Jayega',
+         value: code === "YT434GR930" ? "9:00 PM" :"10:10 PM", 
+         color: 'text-red-400'
+     },
   ]), []);
 
   const prizePool = useMemo(() => ([
@@ -38,7 +51,7 @@ const App = () => {
 
   return (
 
-    <Suspense allback={<div className="text-white text-center mt-10">Loading...</div>}>
+    
 
        <div className="min-h-screen bg-gray-950 p-4 font-sans flex justify-center items-start pt-8">
 
@@ -112,7 +125,7 @@ const App = () => {
         </footer>
       </div>
     </div>
-    </Suspense>
+
    
   );
 };

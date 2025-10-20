@@ -36,7 +36,7 @@ export async function GET(req) {
       query.createdAt.$gte = nineThirtyPM;
     }
 
-    const data = await registrationModal.find(query).sort({ createdAt: -1 });
+    const data = await registrationModal.find(query).sort({ createdAt: 1 });
 
     return NextResponse.json({ success: true, count: data.length, data });
   } catch (err) {

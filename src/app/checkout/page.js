@@ -68,7 +68,6 @@ function CheckoutContent() {
       } else {
         toast.error("Please try after sometime.");
       }
-    } finally {
       setLoading(false);
     }
   };

@@ -37,6 +37,7 @@ export async function POST(req) {
           $gte: today,
           $lt: tomorrow,
         },
+      
       }),
 
    
@@ -98,8 +99,8 @@ export async function POST(req) {
       player2: body.player2,
       player3: body.player3,
       player4: body.player4,
-      backupPlayer1: body.backupPlayer1,
-      backupPlayer2: body.backupPlayer2,
+      backupPlayer1: body.backup1,
+      backupPlayer2: body.backup2,
       slot: slotCount,
       order_id: response.data.order_id,
       payment_status: "pending",
